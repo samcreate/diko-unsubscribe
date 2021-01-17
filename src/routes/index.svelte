@@ -136,6 +136,7 @@
     justify-content: center;
     background: #fdfdfb;
     flex-direction: column;
+    z-index: 2;
   }
 
   .email-form p {
@@ -185,6 +186,7 @@
     }
     .email-form {
       margin: 1rem;
+      width: 95%;
     }
     .email-form input {
       width: 90%;

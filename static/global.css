@@ -8,6 +8,14 @@ body {
 	background: #FDFDFB;
 }
 
+@media only screen and (max-width: 39.1875rem) {
+    body {
+      width: 100%;
+      height: 100%;
+      min-height: -webkit-fill-available;
+    }
+  }
+
 @font-face {
 	font-family: NPC;
 	src: url(NeuePlakText-SemiBold.eot);
