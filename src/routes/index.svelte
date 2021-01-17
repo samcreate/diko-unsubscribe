@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import gsap from "gsap";
   let buttonNode;
+  let formNode;
   let btn_size;
   let w;
   let h;
@@ -16,6 +17,7 @@
     }
   };
   let show = false;
+  let email = "";
 
   onMount(() => {
     btn_size = buttonNode.getBoundingClientRect();
@@ -54,6 +56,17 @@
     btn.x = h / 2;
     btn.y = w / 2;
     updateBtn();
+  }
+
+  function handleSubmit(e) {
+    let formData = new FormData(formNode);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch(error => alert(error));
   }
 </script>
 
@@ -218,9 +231,16 @@
       show = !show;
     }}>
     <p>Enter your email we will remove you from our mailing list.</p>
-    <form name="unsubscribe">
+    <form
+      name="unsubscribe"
+      on:submit|preventDefault={handleSubmit}
+      bind:this={formNode}>
       <input type="hidden" name="form-name" value="unsubscribe" />
-      <input type="email" placeholder="youremail@email.com" name="email" />
+      <input
+        type="email"
+        placeholder="youremail@email.com"
+        name="email"
+        bind:value={email} />
       <button type="submit">Send</button>
     </form>
   </div>
