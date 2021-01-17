@@ -220,7 +220,7 @@
   <p class="bottom">
     For god’s sake don’t unsubscribe. We’ll even give you our Unsubscribable
     Unsubscribe Button™ to use with your own not-a-newsletter that you can
-    <a class="red" download="archive.zip">download here.</a>
+    <a class="red" download href="archive.zip">download here.</a>
     If that’s not enough to make you stay and you still want to unsubscribe,
     please submit a 1000-word essay explaining the reasons why or
     <a
