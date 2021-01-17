@@ -1,0 +1,47 @@
+body {
+	
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+	margin: 0;
+	font-family: NPC;
+	background: #FDFDFB;
+}
+
+@font-face {
+	font-family: NPC;
+	src: url(NeuePlakText-SemiBold.eot);
+	src: url(NeuePlakText-SemiBold.eot?#iefix) format("embedded-opentype"), url(NeuePlakText-SemiBold.woff2) format("woff2"), url(NeuePlakText-SemiBold.woff) format("woff"), url(NeuePlakText-SemiBold.ttf) format("truetype");
+	font-weight: 600;
+	font-style: normal
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5em 0;
+	font-weight: 400;
+	line-height: 1.2;
+	font-family: NPC;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+a {
+	color: inherit;
+}
+
+code {
+	font-family: menlo, inconsolata, monospace;
+	font-size: calc(1em - 2px);
+	color: #555;
+	background-color: #f0f0f0;
+	padding: 0.2em 0.4em;
+	border-radius: 2px;
+}
+
+@media (min-width: 400px) {
+	body {
+		font-size: 16px;
+	}
+}
