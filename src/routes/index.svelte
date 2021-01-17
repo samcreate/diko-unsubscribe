@@ -18,6 +18,8 @@
   };
   let show = false;
   let email = "";
+  const PLACEHOLDER_DEFAULT = "youremail@email.com";
+  let placeholder = PLACEHOLDER_DEFAULT;
 
   onMount(() => {
     btn_size = buttonNode.getBoundingClientRect();
@@ -59,13 +61,20 @@
   }
 
   function handleSubmit(e) {
+    if (email.length < 1) return;
     let formData = new FormData(formNode);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString()
     })
-      .then(() => console.log("Form successfully submitted"))
+      .then(() => {
+        email = "";
+        placeholder = "Successfully removed.";
+        setTimeout(() => {
+          show = false;
+        }, 1500);
+      })
       .catch(error => alert(error));
   }
 </script>
@@ -236,11 +245,7 @@
       on:submit|preventDefault={handleSubmit}
       bind:this={formNode}>
       <input type="hidden" name="form-name" value="unsubscribe" />
-      <input
-        type="email"
-        placeholder="youremail@email.com"
-        name="email"
-        bind:value={email} />
+      <input type="email" {placeholder} name="email" bind:value={email} />
       <button type="submit">Send</button>
     </form>
   </div>
