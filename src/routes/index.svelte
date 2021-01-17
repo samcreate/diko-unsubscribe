@@ -96,6 +96,7 @@
     border: none;
     position: absolute;
     cursor: pointer;
+    z-index: 1;
   }
   p {
     margin: 0;
