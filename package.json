@@ -6,7 +6,7 @@
     "dev": "sapper dev",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
-    "deploy": "sapper export --legacy && rm -rf __sapper__/export/archive.zip && ditto -c -k --sequesterRsrc --keepParent __sapper__/export/ static/archive.zip && git add . && git commit -m 'deploy' && git push",
+    "deploy": "rm -rf __sapper__/export/ && sapper export --legacy && rm -rf __sapper__/export/archive.zip && ditto -c -k --sequesterRsrc --keepParent __sapper__/export/ static/archive.zip && git add . && git commit -m 'deploy' && git push",
     "start": "node __sapper__/build"
 
   },
