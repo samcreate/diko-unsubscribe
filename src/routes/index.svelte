@@ -11,6 +11,7 @@
     x: 0,
     y: 0
   };
+  let formTitle = "Enter your email we will remove you from our mailing list.";
   let rnd = {
     btwn: function(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
@@ -70,10 +71,11 @@
     })
       .then(() => {
         email = "";
-        placeholder = "Successfully removed.";
+        placeholder = "Successfully sent.";
+        formTitle = "Hope you’re proud of yourself.";
         setTimeout(() => {
-          show = false;
-        }, 1500);
+          window.location.href = "http://www.zombo.com";
+        }, 5000);
       })
       .catch(error => alert(error));
   }
@@ -223,10 +225,16 @@
   <p class="bottom">
     For god’s sake don’t unsubscribe. We’ll even give you our Unsubscribable
     Unsubscribe Button™ to use with your own not-a-newsletter that you can
-    <a class="red" download href="archive.zip">download here.</a>
+    <a
+      class="red"
+      href="https://codepen.io/DIKOCreative/pen/ExgMqgz"
+      target="_blank">
+      download here.
+    </a>
     If that’s not enough to make you stay and you still want to unsubscribe,
     please submit a 1000-word essay explaining the reasons why or
     <a
+      class="red"
       href=""
       on:click|preventDefault={() => {
         show = !show;
@@ -242,7 +250,7 @@
     on:click|preventDefault|self={() => {
       show = !show;
     }}>
-    <p>Enter your email we will remove you from our mailing list.</p>
+    <p>{formTitle}</p>
     <form
       name="unsubscribe"
       on:submit|preventDefault={handleSubmit}
