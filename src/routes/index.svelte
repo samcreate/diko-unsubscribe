@@ -11,7 +11,7 @@
     x: 0,
     y: 0
   };
-  let formTitle = "Enter your email we will remove you from our mailing list.";
+  let formTitle = "Enter your email to be removed from our mailing list.";
   let rnd = {
     btwn: function(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
@@ -72,10 +72,10 @@
       .then(() => {
         email = "";
         placeholder = "Successfully sent.";
-        formTitle = "Hope you’re proud of yourself.";
+        formTitle = "Hope your proud of yourself.";
         setTimeout(() => {
           window.location.href = "http://www.zombo.com";
-        }, 5000);
+        }, 15000);
       })
       .catch(error => alert(error));
   }
@@ -232,7 +232,6 @@
       download here.
     </a>
     If that’s not enough to make you stay and you still want to unsubscribe,
-    please submit a 1000-word essay explaining the reasons why or
     <a
       class="red"
       href=""
@@ -244,12 +243,7 @@
   </p>
 </div>
 {#if show}
-  <div
-    class="email-form"
-    transition:fade={{ duration: 200 }}
-    on:click|preventDefault|self={() => {
-      show = !show;
-    }}>
+  <div class="email-form" transition:fade={{ duration: 200 }}>
     <p>{formTitle}</p>
     <form
       name="unsubscribe"
