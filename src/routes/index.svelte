@@ -72,7 +72,7 @@
       .then(() => {
         email = "";
         placeholder = "Successfully sent.";
-        formTitle = "Hope your proud of yourself.";
+        formTitle = "Hope you’re proud of yourself.";
         setTimeout(() => {
           window.location.href = "http://www.zombo.com";
         }, 15000);
