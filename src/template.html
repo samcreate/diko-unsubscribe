@@ -24,6 +24,18 @@
 		<!-- This contains the contents of the <svelte:head> component, if
 	     the current page has one -->
 		%sapper.head%
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEDZ0RF35G"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-TEDZ0RF35G");
+		</script>
 	</head>
 	<body>
 		<form name="unsubscribe" netlify netlify-honeypot="bot-field" hidden>
